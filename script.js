@@ -1,92 +1,26 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+const questionContainer = document.querySelector(".question-container");
+const resultContainer = document.querySelector(".result-container");
+const gifResult = document.querySelector(".gif-result");
+const yesBtn = document.querySelector(".js-yes-btn");
+const noBtn = document.querySelector(".js-no-btn");
 
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #ffe6e9, #ffd6dc);
-  font-family: "Quicksand", sans-serif;
-}
+// NO button movement (FINAL FIX)
+noBtn.addEventListener("mouseover", () => {
+  const parent = document.querySelector(".button-container");
 
-.container {
-  width: 90%;
-  max-width: 400px;
-  background: white;
-  padding: 20px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
+  const maxX = parent.clientWidth - noBtn.clientWidth;
+  const maxY = parent.clientHeight - noBtn.clientHeight;
 
-/* video */
-.local-gif,
-.gif-result {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 20px;
-}
+  const newX = Math.random() * maxX;
+  const newY = Math.random() * maxY;
 
-/* text */
-.sorry,
-.question {
-  font-size: clamp(1.8rem, 5vw, 2.4rem);
-  margin-bottom: 10px;
-}
+  noBtn.style.left = `${newX}px`;
+  noBtn.style.top = `${newY}px`;
+});
 
-/* buttons */
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
-  position: relative;
-  height: 70px;
-}
-
-/* base button */
-.btn {
-  border: none;
-  border-radius: 50px;
-  padding: 10px 24px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #ff6b81;
-  color: white;
-  transition: 0.3s;
-  box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
-}
-
-/* YES button */
-.yes-btn {
-  position: relative;
-  z-index: 2;
-}
-
-/* NO button FIXED */
-.no-btn {
-  position: absolute;
-  left: 60%;
-  top: 0;
-}
-
-/* message */
-.msg {
-  margin-top: 25px;
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-/* result */
-.result-container {
-  display: none;
-}
-
-.result-container h2 {
-  font-size: clamp(1.8rem, 5vw, 2.4rem);
-}
+// YES button works
+yesBtn.addEventListener("click", () => {
+  questionContainer.style.display = "none";
+  resultContainer.style.display = "block";
+  gifResult.play();
+});
