@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe6e9, #ffd6dc);
+  font-family: "Quicksand", sans-serif;
+}
+
+/* main container */
+.container {
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease;
+}
+
+/* video */
+.local-gif,
+.gif-result {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+/* text */
+.sorry,
+.question {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: 10px;
+}
+
+/* buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.btn {
+  border: none;
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ff6b81;
+  color: white;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background-color: #ff8fa3;
+}
+
+/* moving NO button */
+.no-btn {
+  position: absolute;
+}
+
+/* message */
+.msg {
+  margin-top: 25px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* result */
+.result-container {
+  display: none;
+}
+
+.result-container h2 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+/* loader */
+.cssload-main {
+  display: none;
+  position: absolute;
+}
+
+/* animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
