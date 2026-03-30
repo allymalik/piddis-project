@@ -42,16 +42,18 @@ body {
 .button-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 15px;
   margin-top: 20px;
   position: relative;
-  height: 60px;
+  height: 70px;
 }
 
+/* base button */
 .btn {
   border: none;
   border-radius: 50px;
-  padding: 10px 22px;
+  padding: 10px 24px;
   font-size: 16px;
   cursor: pointer;
   background-color: #ff6b81;
@@ -60,20 +62,16 @@ body {
   box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
 }
 
-.btn:hover {
-  transform: scale(1.1);
-  background-color: #ff8fa3;
-}
-
-/* YES always visible */
+/* YES button */
 .yes-btn {
+  position: relative;
   z-index: 2;
 }
 
-/* NO button floating */
+/* NO button FIXED */
 .no-btn {
   position: absolute;
-  left: 120px;
+  left: 60%;
   top: 0;
 }
 
